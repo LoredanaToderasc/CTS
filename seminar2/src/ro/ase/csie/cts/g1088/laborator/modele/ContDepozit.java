@@ -4,10 +4,10 @@ import ro.ase.csie.cts.g1088.laborator.exceptii.ExceptieFonduriInsuficiente;
 import ro.ase.csie.cts.g1088.laborator.exceptii.ExceptieTransferIlegal;
 import ro.ase.csie.cts.g1088.laborator.interfete.Profitabil;
 
-public class ContDepozit extends ContBancar implements Profitabil{
+public class ContDepozit extends ContBancar implements Profitabil {
 
 	public static final double BALANTA_MINIMA = 100;
-	
+
 	public ContDepozit(String iban) {
 		super(BALANTA_MINIMA, iban);
 	}
@@ -28,7 +28,7 @@ public class ContDepozit extends ContBancar implements Profitabil{
 
 	@Override
 	public void transfer(Cont destinatie, Double valoare) throws ExceptieFonduriInsuficiente, ExceptieTransferIlegal {
-		if(this==destinatie) {
+		if (this == destinatie) {
 			throw new ExceptieTransferIlegal();
 		}
 		this.extrage(valoare);
@@ -37,8 +37,8 @@ public class ContDepozit extends ContBancar implements Profitabil{
 
 	@Override
 	public void adaugaDobanda(double procentDobanda) {
-		this.balanta *= (1+procentDobanda/100);
-		
+		this.balanta *= (1 + procentDobanda / 100);
+
 	}
 
 }
