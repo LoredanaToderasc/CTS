@@ -40,6 +40,7 @@ public class Produs {
 	    float discount = TipProdus.NOU.getDiscount();
 	    float valoareDiscountTipProdus = 0;
 	    
+	    
 	    switch(tipProdus) {
 	    case NOU:
 	    	pretFinal = pretInitial;
