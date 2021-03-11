@@ -23,6 +23,8 @@
 hs_err_pid*
 
 .metadata
+.classpath
+.project
 bin/
 tmp/
 *.tmp
