@@ -8,7 +8,7 @@ import ro.ase.csie.cts.g1088.laborator3.faza3.servicii.ServiciuValidari;
 import ro.ase.csie.cts.g1088.laborator3.faza3.servicii.StrategieMarketing2021;
 
 public class Produs {
-
+	
 	InterfataMarketing serviciuMk = null;
 	InterfataValidare servicuValidare = null;
 	

@@ -37,8 +37,8 @@ public class TestProdus {
 				}
 			});
 			pretFinal = produs.getPretFinal(TipProdus.DISCOUNT, 100, 12);
-			System.out.println("Pretul final este : " + pretFinal);
-
+			System.out.println("Pretul final este : " + pretFinal); 
+			
 		} catch (ExceptiePretInvalid e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
