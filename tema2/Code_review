@@ -15,3 +15,5 @@
 15. scriem constructorul fara param
 16. generam constructorul fara param
 17. nu are sens ca metode imprumut sa si afiseze si sa si returneze valoarea imprumutului
+18. pentru valoare adaugam o clasa ce extinde Exception si o folosim in InterfataValidareValoare
+19. in loc de if folosim operatorul ternar

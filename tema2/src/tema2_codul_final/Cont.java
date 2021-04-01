@@ -11,9 +11,9 @@ public class Cont {
 	private static final int zileAn = 365;
 
 	private Cont() {
-		
+
 	}
-	
+
 	public Cont(double valoare_imprumut, double rataDobanda, int perioada, int cod_cont, TipCont tip_cont) {
 		super();
 		this.valoare_imprumut = valoare_imprumut;
@@ -22,7 +22,6 @@ public class Cont {
 		this.cod_cont = cod_cont;
 		this.tip_cont = tip_cont;
 	}
-
 
 	public double imprumut() {
 		System.out.println("Valoarea imprumutului este " + this.valoare_imprumut);
@@ -39,17 +38,16 @@ public class Cont {
 		return valoare_imprumut * rataDobanda;
 	}
 
-	public void setValoare(double valoare) throws Exception {
-		if (valoare < 0)
-			throw new Exception();
-		else {
-			valoare_imprumut = valoare;
+	public void setValoare(double valoare) throws ExceptieValoareInvalida {
+		if (valoare < 0) {
+			throw new ExceptieValoareInvalida();
 		}
+		valoare_imprumut = valoare;
 	}
 
 	public String afisareImprumut() {
-		return "Imprumut: " + this.valoare_imprumut + " ; Rata dobanda: " + this.rataDobanda + " ; "
-				+ "Perioada:" + perioada + " ; Tipul de cont: " + tip_cont + ";";
+		return "Imprumut: " + this.valoare_imprumut + " ; Rata dobanda: " + this.rataDobanda + " ; " + "Perioada:"
+				+ perioada + " ; Tipul de cont: " + tip_cont + ";";
 	}
 
 	public void print() {
@@ -62,21 +60,24 @@ public class Cont {
 		Cont cont;
 		for (int i = 0; i < conturi.length; i++) {
 			cont = conturi[i];
-			if (cont.tip_cont == TipCont.PREMIUM || cont.tip_cont == TipCont.SUPER_PREMIUM)
-				comisionTotal += comisionBroker
-						* (cont.valoare_imprumut * Math.pow(cont.rataDobanda, (cont.perioada / zileAn))
-								- cont.valoare_imprumut); // dobanda-principala
+//			if (cont.tip_cont == TipCont.PREMIUM || cont.tip_cont == TipCont.SUPER_PREMIUM)
+//				comisionTotal += comisionBroker
+//						* (cont.valoare_imprumut * Math.pow(cont.rataDobanda, (cont.perioada / zileAn))
+//								- cont.valoare_imprumut); // dobanda-principala
+			comisionTotal += (cont.tip_cont != TipCont.PREMIUM || cont.tip_cont != TipCont.SUPER_PREMIUM) ? 0
+					: (comisionBroker * (cont.valoare_imprumut * Math.pow(cont.rataDobanda, (cont.perioada / zileAn))
+							- cont.valoare_imprumut));
 		}
 		return comisionTotal;
 	}
 
-	public Cont(double valoare, double rata, int tip_cont) throws Exception {
-		if (valoare < 0)
-			throw new Exception();
-		else {
-			valoare_imprumut = valoare;
-		}
-		this.rataDobanda = rata;
-		this.tip_cont = tip_cont;
-	}
+//	public Cont(double valoare, double rata, int tip_cont) throws Exception {
+//		if (valoare < 0)
+//			throw new Exception();
+//		else {
+//			valoare_imprumut = valoare;
+//		}
+//		this.rataDobanda = rata;
+//		this.tip_cont = tip_cont;
+//	}
 }
