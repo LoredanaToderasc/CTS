@@ -1,0 +1,11 @@
+package ro.ase.csie.cts.g1088.dp.builder;
+
+public class Arma implements InterfataArma{
+
+	@Override
+	public void PocPoc() {
+		System.out.println("Poc Poc -> -> -> -> ->");
+		
+	}
+
+}
