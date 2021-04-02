@@ -14,7 +14,12 @@ public class Cont {
 
 	}
 
-	public Cont(double valoare_imprumut, double rataDobanda, int perioada, int cod_cont, TipCont tip_cont) {
+	public Cont(
+			double valoare_imprumut, 
+			double rataDobanda, 
+			int perioada, 
+			int cod_cont, 
+			TipCont tip_cont) {
 		super();
 		this.valoare_imprumut = valoare_imprumut;
 		this.rataDobanda = rataDobanda;
@@ -38,11 +43,13 @@ public class Cont {
 		return valoare_imprumut * rataDobanda;
 	}
 
-	public void setValoare(double valoare) throws ExceptieValoareInvalida {
-		if (valoare < 0) {
-			throw new ExceptieValoareInvalida();
+	public void setValoareImprumut(double valoare) throws ExceptieValoareImprumutInvalida {
+		if(valoare<0)
+			throw new ExceptieValoareImprumutInvalida();
+		else
+		{
+			valoare_imprumut = valoare;
 		}
-		valoare_imprumut = valoare;
 	}
 
 	public String afisareImprumut() {
