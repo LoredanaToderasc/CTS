@@ -1,0 +1,43 @@
+1.Enums and Annotations
+- cream enum pentru tipul de cont
+
+2. Meaningful Names
+- Account => Cont
+- denumirea tip_cont => cod
+- redenumire zileActiv => perioada
+- redenumire metoda to_String => afisareImprumuturi, rata=>rataDobanda
+- redenumire metoda calculeaza => calculeazaComisionTotal
+- redenumire metoda imprumut => getImprumut
+
+3. Accessibility
+- trecerea variabilelor din public in private
+
+4. Input Validation
+- datele trebuie validate inainte de a fi utilizate
+- cream o interfata ce gestioneaza validarile folosind exceptiile
+
+5. Exceptions
+- cream exceptii care sa fie "aruncate" atunci cand variabilele nu sunt valide
+
+6. Creating and Destroying Objects
+- variabila temp nu este folosita => o stergem
+- variabila vb este declarata in metoda print, dar nu este folosita => o stergem
+
+7. Formmating
+- trecerea fiecarui camp pe cate o linie, la fel si parametrii primiti de constructor
+- formatarea codului
+- in mesajele afisate trebuie aleasa o singura limba => am ales romana
+- in loc de if folosim operatorul ternar
+
+8. Mutability
+- comisionul fix de 0.0125 o facem variabila statica finala
+- la fel si pentru zile anului
+
+9. Classes and Interfaces
+- folosim metode accesor, nu campuri publice
+
+- scriem constructorul fara parametrii
+- generam constructorul cu parametrii
+
+10. Methods
+- nu are sens ca metodele imprumut si getRata sa si afiseze si sa si returneze valoarea imprumutului => trebuie doar sa returneze

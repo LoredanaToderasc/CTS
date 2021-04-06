@@ -28,13 +28,11 @@ public class Cont {
 		this.tip_cont = tip_cont;
 	}
 
-	public double imprumut() {
-		System.out.println("Valoarea imprumutului este " + this.valoare_imprumut);
+	public double getImprumut() {
 		return valoare_imprumut;
 	}
 
 	public double getRata() {
-		System.out.println("Rata dobanzii este " + rataDobanda);
 		return this.rataDobanda;
 	}
 
@@ -44,10 +42,9 @@ public class Cont {
 	}
 
 	public void setValoareImprumut(double valoare) throws ExceptieValoareImprumutInvalida {
-		if(valoare<0)
+		if (valoare < 0)
 			throw new ExceptieValoareImprumutInvalida();
-		else
-		{
+		else {
 			valoare_imprumut = valoare;
 		}
 	}
@@ -58,7 +55,6 @@ public class Cont {
 	}
 
 	public void print() {
-		int vb = 10;
 		System.out.println("Asta este un cont!");
 	}
 
@@ -67,10 +63,6 @@ public class Cont {
 		Cont cont;
 		for (int i = 0; i < conturi.length; i++) {
 			cont = conturi[i];
-//			if (cont.tip_cont == TipCont.PREMIUM || cont.tip_cont == TipCont.SUPER_PREMIUM)
-//				comisionTotal += comisionBroker
-//						* (cont.valoare_imprumut * Math.pow(cont.rataDobanda, (cont.perioada / zileAn))
-//								- cont.valoare_imprumut); // dobanda-principala
 			comisionTotal += (cont.tip_cont != TipCont.PREMIUM || cont.tip_cont != TipCont.SUPER_PREMIUM) ? 0
 					: (comisionBroker * (cont.valoare_imprumut * Math.pow(cont.rataDobanda, (cont.perioada / zileAn))
 							- cont.valoare_imprumut));
@@ -78,13 +70,13 @@ public class Cont {
 		return comisionTotal;
 	}
 
-//	public Cont(double valoare, double rata, int tip_cont) throws Exception {
-//		if (valoare < 0)
-//			throw new Exception();
-//		else {
-//			valoare_imprumut = valoare;
-//		}
-//		this.rataDobanda = rata;
-//		this.tip_cont = tip_cont;
-//	}
+	public Cont(double valoare, double rata, int cod_cont) throws Exception {
+		if (valoare < 0)
+			throw new ExceptieValoareImprumutInvalida();
+		else {
+			valoare_imprumut = valoare;
+		}
+		this.rataDobanda = rata;
+		this.cod_cont = cod_cont;
+	}
 }
