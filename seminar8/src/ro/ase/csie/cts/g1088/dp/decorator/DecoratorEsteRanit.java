@@ -6,17 +6,15 @@ public class DecoratorEsteRanit extends DecoratorErouAbstract{
 	
 	public DecoratorEsteRanit(SuperErou erou) {
 		super(erou);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void alearga() {
-		if(this.erou.puncteViata < NIVEL_CRITIC) {
-			System.out.println("Eroul nu mai poate alerga. Este ranit critic");
-		}else
+		if(this.erou.getPuncteViata()<NIVEL_CRITIC) {
+			System.out.println("Eroul nu mai poate alerga. Este ranit critic!");
+		}
+		else {
 			this.erou.alearga();
+		}
 	}
-	
-	
-
 }
