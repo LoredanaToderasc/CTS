@@ -13,9 +13,9 @@ public class TestChain {
 		
 		ModulProcesareMesaj serverChat = modulFiltru;
 		
-		serverChat.procesareMesaj(new MesajChat("Salut!", 3, "@gigel"));;
-		serverChat.procesareMesaj(new MesajChat("Esti un jucator rau", 0, "@gigel"));;
-		serverChat.procesareMesaj(new MesajChat("Salut tuturor", 0, "@everyone"));;
+		serverChat.procesareMesaj(new MesajChat("Salut!", 3, "@gigel"));
+		serverChat.procesareMesaj(new MesajChat("Esti un jucator rau", 0, "@gigel"));
+		serverChat.procesareMesaj(new MesajChat("Salut tuturor", 0, "@everyone"));
 		
 
 	}
